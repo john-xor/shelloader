@@ -1,5 +1,5 @@
 # shelloader
-generates a shell~code loading powershell script that is xor encrypted.
+generates a shellcode loading powershell script that is xor encrypted.
 
 # Usage
 
